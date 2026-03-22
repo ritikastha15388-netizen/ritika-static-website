@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ritika Shrestha | Student Portfolio</title>
+  <meta name="description" content="Portfolio of Ritika Shrestha — a passionate student developer showcasing projects, skills, and contact information." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <!-- ============ PRELOADER ============ -->
+  <div id="preloader" class="preloader">
+    <div class="preloader__spinner"></div>
+  </div>
+
+  <!-- ============ CUSTOM CURSOR ============ -->
+  <div class="cursor cursor--outer" id="cursorOuter"></div>
+  <div class="cursor cursor--inner" id="cursorInner"></div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header id="header" class="header">
+    <nav class="nav container">
+      <a href="#hero" class="nav__logo" id="navLogo">
+        <span class="nav__logo-bracket">&lt;</span>RS<span class="nav__logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav__list" id="navList">
+        <li><a href="#hero" class="nav__link active" data-section="hero">Home</a></li>
+        <li><a href="#about" class="nav__link" data-section="about">About</a></li>
+        <li><a href="#skills" class="nav__link" data-section="skills">Skills</a></li>
+        <li><a href="#portfolio" class="nav__link" data-section="portfolio">Portfolio</a></li>
+        <li><a href="#contact" class="nav__link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section id="hero" class="hero">
+    <canvas id="particleCanvas" class="hero__canvas"></canvas>
+    <div class="hero__content container">
+      <p class="hero__greeting reveal-text">Hello, I'm</p>
+      <h1 class="hero__name reveal-text">Ritika <span class="gradient-text">Shrestha</span></h1>
+      <p class="hero__tagline reveal-text">
+        <span class="typewriter" id="typewriter"></span><span class="typewriter__cursor">|</span>
+      </p>
+      <p class="hero__description reveal-text">
+        A passionate student on a journey to learn, build and create meaningful digital experiences.
+      </p>
+      <div class="hero__cta reveal-text">
+        <a href="#portfolio" class="btn btn--primary" id="ctaPortfolio">View My Work</a>
+        <a href="#contact" class="btn btn--outline" id="ctaContact">Get in Touch</a>
+      </div>
+      <div class="hero__scroll" id="scrollIndicator">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT SECTION ============ -->
+  <section id="about" class="about section">
+    <div class="container">
+      <h2 class="section__title">
+        <span class="section__number">01.</span> About <span class="gradient-text">Me</span>
+      </h2>
+
+      <div class="about__grid">
+        <div class="about__image-wrapper" id="aboutImage">
+          <div class="about__image-border"></div>
+          <img src="assets/profile-avatar.png" alt="Ritika Shrestha profile" class="about__image" />
+        </div>
+
+        <div class="about__content">
+          <p class="about__text">
+            I'm <strong>Ritika Shrestha</strong>, a dedicated student with a deep curiosity for
+            technology and design. Currently pursuing my studies, I spend my time exploring
+            web development, UI/UX design, and creative problem solving.
+          </p>
+          <p class="about__text">
+            I believe in the power of clean code and beautiful design to transform ideas
+            into impactful digital experiences. When I'm not coding, you can find me
+            sketching interfaces, reading tech blogs, or collaborating with peers on
+            creative projects.
+          </p>
+
+          <div class="about__stats">
+            <div class="about__stat" id="statProjects">
+              <span class="about__stat-number" data-count="8">0</span>
+              <span class="about__stat-label">Projects</span>
+            </div>
+            <div class="about__stat" id="statTech">
+              <span class="about__stat-number" data-count="12">0</span>
+              <span class="about__stat-label">Technologies</span>
+            </div>
+            <div class="about__stat" id="statCoffee">
+              <span class="about__stat-number" data-count="500">0</span>
+              <span class="about__stat-label">Cups of Coffee</span>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn btn--primary" id="aboutCta">Let's Connect</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS SECTION ============ -->
+  <section id="skills" class="skills section">
+    <div class="container">
+      <h2 class="section__title">
+        <span class="section__number">02.</span> My <span class="gradient-text">Skills</span>
+      </h2>
+
+      <div class="skills__grid">
+        <div class="skill-card" data-tilt id="skillHtml">
+          <div class="skill-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+          </div>
+          <h3 class="skill-card__title">HTML5</h3>
+          <div class="skill-card__bar"><div class="skill-card__progress" data-progress="90"></div></div>
+        </div>
+
+        <div class="skill-card" data-tilt id="skillCss">
+          <div class="skill-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <h3 class="skill-card__title">CSS3</h3>
+          <div class="skill-card__bar"><div class="skill-card__progress" data-progress="85"></div></div>
+        </div>
+
+        <div class="skill-card" data-tilt id="skillJs">
+          <div class="skill-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="skill-card__title">JavaScript</h3>
+          <div class="skill-card__bar"><div class="skill-card__progress" data-progress="75"></div></div>
+        </div>
+
+        <div class="skill-card" data-tilt id="skillFigma">
+          <div class="skill-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3 class="skill-card__title">UI/UX Design</h3>
+          <div class="skill-card__bar"><div class="skill-card__progress" data-progress="70"></div></div>
+        </div>
+
+        <div class="skill-card" data-tilt id="skillGit">
+          <div class="skill-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 006 0v-1a10 10 0 10-3.92 7.94"/></svg>
+          </div>
+          <h3 class="skill-card__title">Git & GitHub</h3>
+          <div class="skill-card__bar"><div class="skill-card__progress" data-progress="72"></div></div>
+        </div>
+
+        <div class="skill-card" data-tilt id="skillPython">
+          <div class="skill-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+          </div>
+          <h3 class="skill-card__title">Python</h3>
+          <div class="skill-card__bar"><div class="skill-card__progress" data-progress="65"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PORTFOLIO SECTION ============ -->
+  <section id="portfolio" class="portfolio section">
+    <div class="container">
+      <h2 class="section__title">
+        <span class="section__number">03.</span> My <span class="gradient-text">Portfolio</span>
+      </h2>
+
+      <div class="portfolio__filters" id="portfolioFilters">
+        <button class="portfolio__filter active" data-filter="all">All</button>
+        <button class="portfolio__filter" data-filter="web">Web</button>
+        <button class="portfolio__filter" data-filter="design">Design</button>
+        <button class="portfolio__filter" data-filter="other">Other</button>
+      </div>
+
+      <div class="portfolio__grid" id="portfolioGrid">
+        <!-- Project 1 -->
+        <article class="project-card" data-category="web" id="project1">
+          <div class="project-card__image">
+            <div class="project-card__placeholder" style="--accent: var(--clr-accent-1);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <div class="project-card__overlay">
+              <a href="#" class="project-card__link" aria-label="View project">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">Student Blog Platform</h3>
+            <p class="project-card__description">A responsive blog website built with HTML &amp; CSS featuring a clean reading experience.</p>
+            <div class="project-card__tags">
+              <span>HTML</span><span>CSS</span><span>Responsive</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card" data-category="web" id="project2">
+          <div class="project-card__image">
+            <div class="project-card__placeholder" style="--accent: var(--clr-accent-2);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            </div>
+            <div class="project-card__overlay">
+              <a href="#" class="project-card__link" aria-label="View project">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">Weather Dashboard</h3>
+            <p class="project-card__description">Interactive weather app that fetches real-time data with a beautiful animated UI.</p>
+            <div class="project-card__tags">
+              <span>JavaScript</span><span>API</span><span>CSS</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card" data-category="design" id="project3">
+          <div class="project-card__image">
+            <div class="project-card__placeholder" style="--accent: var(--clr-accent-3);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <div class="project-card__overlay">
+              <a href="#" class="project-card__link" aria-label="View project">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">Mobile App UI Kit</h3>
+            <p class="project-card__description">A modern UI kit designed in Figma for a fitness tracking mobile application.</p>
+            <div class="project-card__tags">
+              <span>Figma</span><span>UI/UX</span><span>Mobile</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card" data-category="web" id="project4">
+          <div class="project-card__image">
+            <div class="project-card__placeholder" style="--accent: var(--clr-accent-1);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg>
+            </div>
+            <div class="project-card__overlay">
+              <a href="#" class="project-card__link" aria-label="View project">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">Task Manager App</h3>
+            <p class="project-card__description">A drag-and-drop task manager with local storage persistence and smooth animations.</p>
+            <div class="project-card__tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project-card" data-category="other" id="project5">
+          <div class="project-card__image">
+            <div class="project-card__placeholder" style="--accent: var(--clr-accent-2);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+            </div>
+            <div class="project-card__overlay">
+              <a href="#" class="project-card__link" aria-label="View project">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">Python Data Analyzer</h3>
+            <p class="project-card__description">A Python script that analyzes CSV datasets and generates visual reports with charts.</p>
+            <div class="project-card__tags">
+              <span>Python</span><span>Data</span><span>CLI</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="project-card" data-category="design" id="project6">
+          <div class="project-card__image">
+            <div class="project-card__placeholder" style="--accent: var(--clr-accent-3);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            </div>
+            <div class="project-card__overlay">
+              <a href="#" class="project-card__link" aria-label="View project">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">Landing Page Redesign</h3>
+            <p class="project-card__description">A complete redesign concept for a startup landing page with modern aesthetics.</p>
+            <div class="project-card__tags">
+              <span>Design</span><span>HTML</span><span>CSS</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section id="contact" class="contact section">
+    <div class="container">
+      <h2 class="section__title">
+        <span class="section__number">04.</span> Get in <span class="gradient-text">Touch</span>
+      </h2>
+
+      <div class="contact__grid">
+        <div class="contact__info">
+          <p class="contact__description">
+            I'm always open to new opportunities, collaborations, or just a friendly chat.
+            Feel free to reach out — I'd love to hear from you!
+          </p>
+
+          <div class="contact__details">
+            <div class="contact__detail" id="contactEmail">
+              <div class="contact__detail-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <a href="mailto:ritika@example.com">ritika@example.com</a>
+              </div>
+            </div>
+
+            <div class="contact__detail" id="contactLocation">
+              <div class="contact__detail-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h4>Location</h4>
+                <p>Kathmandu, Nepal</p>
+              </div>
+            </div>
+
+            <div class="contact__detail" id="contactPhone">
+              <div class="contact__detail-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <h4>Phone</h4>
+                <a href="tel:+9779800000000">+977 980-0000-000</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact__socials">
+            <a href="#" class="contact__social" aria-label="GitHub" id="socialGithub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            </a>
+            <a href="#" class="contact__social" aria-label="LinkedIn" id="socialLinkedin">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="contact__social" aria-label="Twitter" id="socialTwitter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+            </a>
+            <a href="#" class="contact__social" aria-label="Instagram" id="socialInstagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact__form" id="contactForm">
+          <div class="form__group">
+            <input type="text" id="formName" class="form__input" placeholder=" " required />
+            <label for="formName" class="form__label">Your Name</label>
+            <div class="form__line"></div>
+          </div>
+          <div class="form__group">
+            <input type="email" id="formEmail" class="form__input" placeholder=" " required />
+            <label for="formEmail" class="form__label">Your Email</label>
+            <div class="form__line"></div>
+          </div>
+          <div class="form__group">
+            <input type="text" id="formSubject" class="form__input" placeholder=" " />
+            <label for="formSubject" class="form__label">Subject</label>
+            <div class="form__line"></div>
+          </div>
+          <div class="form__group">
+            <textarea id="formMessage" class="form__input form__textarea" placeholder=" " required rows="5"></textarea>
+            <label for="formMessage" class="form__label">Your Message</label>
+            <div class="form__line"></div>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full" id="formSubmit">
+            <span>Send Message</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+          <p class="form__status" id="formStatus"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <a href="#hero" class="footer__logo">
+          <span class="nav__logo-bracket">&lt;</span>RS<span class="nav__logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer__text">Designed &amp; Built by Ritika Shrestha &copy; 2026</p>
+        <button class="footer__top" id="backToTop" aria-label="Back to top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
